@@ -1,14 +1,15 @@
 use std::io::{self, Write};
 use reqwest::Error;
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize};
 use serde_json::json;
 
 #[derive(Deserialize)]
 struct Config {
-    OPENAI_KEY: String,
+    openai_key: String,
 }
 
 #[derive(Deserialize)]
+#[allow(dead_code)]
 struct Response {
     id: String,
     object: String,
@@ -18,6 +19,7 @@ struct Response {
 }
 
 #[derive(Deserialize)]
+#[allow(dead_code)]
 struct Choice {
     text: String,
     finish_reason: String,
@@ -27,7 +29,7 @@ struct Choice {
 async fn main() -> Result<(), Error> {
     // config.toml 파일에서 API 키 읽기
     let config: Config = toml::from_str(&std::fs::read_to_string("config.toml").expect("Failed to read config.toml")).unwrap();
-    let api_key = config.OPENAI_KEY;
+    let api_key = config.openai_key;
 
     let client = reqwest::Client::new();
 
