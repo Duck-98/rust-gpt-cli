@@ -51,3 +51,7 @@ cli를 사용할 때 길게 답변하길 원한다면 `main.rs`내에 있는
 > "max_tokens": 60을 원하는 글자수로 바꿔주시면 됩니다.
 
 ## 사용 영상
+
+
+https://github.com/Duck-98/rust-gpt-cli/assets/72850354/5181d7bc-f614-4a4b-8512-4d6a5b67b5d8
+
